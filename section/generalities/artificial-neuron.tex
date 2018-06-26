@@ -1,0 +1,76 @@
+\subsection{Artificial neuron}
+
+As model for the artificial neuron was biological neuron.
+
+An artificial neuron has several input paths that represent the dendritic tree of the biological neuron. For each input path $ i $ in the $ j $ neuron corresponds to a numeric value $ x_i $. This numerical value is the correspondent of the electrical signal from the biological neuron model. Each value $ x_i $ corresponds to the real numerical value $ w_ {ji} $ which is the equivalent of the synaptic force in the biological model of the neuron.
+
+The product $ x_i \ cdot w_ {ji} $ represents the signal $ i $ entering the artificial neuron $ j $.
+
+The sum of $ \ sum_ {i} ^ {} x_i \ cdot w_ {ji} $ represents the argument of the activation function that determines the axonic output value $ y_j $ from the neuron \cite{calculNeuronal}. The most commonly used activation functions are:
+
+\begin{itemize}
+  \item linear function: $$f \colon \mathcal{R} \to \mathcal{R}, f(x)=x$$
+  \item step function (Heaviside): $$f \colon \mathcal{R} \to \{0,1\}, 
+    f(x)= \begin{cases} 
+            1, & x \geq 0 \\ 
+            0, & x < 0 
+          \end{cases}$$
+  \item sigmoidal function: $$f \colon \mathcal{R} \to (0,1), f(x)=\frac{1}{1+e^{-x}}$$
+  \item signum function: $$f \colon \mathcal{R} \to \{-1,1\}, f(x)=sgn(x)=
+          \begin{cases} 
+            1, & x \geq 0 \\ 
+            -1, & x < 0 
+          \end{cases}$$
+  \item hyperbolic tangent function: $$f \colon \mathcal{R} \to (-1,1), f(x)=tanh(x)=\frac{e^x-e^{-x}}{e^x+e^{-x}} $$
+\end{itemize}
+
+Depending on the type of problem we want to solve, you can choose an activation function. These are examples of activation functions that are most commonly used in practical applications. The activation function depends on the chosen neural network model and the type of problem we want to solve, and its choice is not constrained by any condition except eventual analogy with the biological model.
+
+The value obtained by applying the activation function is propagated on the output paths, equivalent to the axonal shaft of the biological model \cite{calculNeuronal}.
+
+In \figurename{ \ref{fig:artificialNeuron}} we have the schematic representation of the artificial neuron.
+
+In conclusion, the artificial neuron performs the following operations:
+
+\begin{itemize}
+    \item Input: $$ I_j = \sum_{i=0}^{n} x_i \cdot w_{ji} $$
+    \item Activation: $$ y_j = f(I_j) = f(\sum_{i=0}^{n} x_i \cdot w_{ji}) $$
+\end{itemize}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{10cm}{!}{\input{images/artificialNeuron.tex}}
+    \caption{Semantic representation of semantic neuron}
+    \label{fig:artificialNeuron}
+\end{figure}
+
+\begin{obs}
+\label{obs:bias}
+    The term $ x_0 $ is called bias, with a constant value of $ x_0 $ = +1 or $ x_0 $ = -1. The role of the bias term is to allow implicit or explicit inclusion of activation level $ \theta_i $, which represents the threshold of activation of the artificial neuron \cite{calculNeuronal}.
+\end{obs}
+
+For example, assuming we have the signum activation function,
+$$f(x)=
+  \begin{cases} 
+    1, & x \geq 0 \\ 
+    -1, & x < 0 
+  \end{cases}$$
+then we can have one of the following situations:\\
+\begin{enumerate}
+    \item Activation level $\theta_j$ explicit:
+        \begin{itemize}
+            \item Integration (Sum): $$ I_j = \sum_{i=0}^{n} x_i \cdot w_{ji} \geq \theta_j $$
+            \item Activation (Transfer): $$ y_j = f(I_j) = f(\sum_{i=0}^{n} x_i \cdot w_{ji}) $$
+        \end{itemize}
+    \item Activation level $\theta_j$ implicit: we note $w_{j0} = \theta_j, x_0 = -1$
+        \begin{itemize}
+            \item Integration (Sum): $$ I_j = \sum_{i=0}^{n} x_i \cdot w_{ji} \geq 0 $$
+            \item Activation (Transfer): $$ y_j = f(I_j) = f(\sum_{i=0}^{n} x_i \cdot w_{ji}) $$
+        \end{itemize}
+\end{enumerate}
+
+
+This mathematical model of the artificial neuron, proposed for the first time by McCullogh and Pitts \cite {autoriFundamentali}, though very simple, are a very powerful computing unit.
+
+McCullogh and Pitts have demonstrated that a set of interconnected artificial neurons is capable in principle of making any calculation, subject to the appropriate choice of strengths synaptic $ w_{ji} $. This means that an ensemble of artificial neurons interconnected into a an assembly called a neural network, can perform any calculation that one can perform classical computing system, though not always as fast or convenient.

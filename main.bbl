@@ -1,0 +1,96 @@
+\begin{thebibliography}{10}
+
+\bibitem{Barlow}
+H.B. Barlow.
+\newblock {\em Unsupervised Learning.}
+\newblock Neural Computation 1, 295, 1989.
+
+\bibitem{Bishop}
+C.M. Bishop.
+\newblock {\em Neural Network for Pattern Recognition}.
+\newblock Clarendon Press, 1995.
+
+\bibitem{Rumelhart}
+J.L.~McClelland D.E.~Rumelhart.
+\newblock {\em Exploration in the microstructure of Cognition.}
+\newblock In: Parallel Distributed Processing. Vol. 1: Foundations, 1986.
+
+\bibitem{Diederik}
+Jimmy Lei~Ba Diederik P.~Kingma.
+\newblock Adam: A method for stochastic optimization.
+\newblock 2015.
+
+\bibitem{Baum}
+F.~Wilczek E.B.~Baum.
+\newblock {\em Neural Networks.}
+\newblock A Comprehensive Foundation. IEEE Press, MacMillian, 1994.
+
+\bibitem{calculNeuronal}
+C.~Enechescu.
+\newblock {\em Calcul Neuronal}.
+
+\bibitem{Fukushima1}
+K.~Fukushima.
+\newblock {\em Cognitron: A Self-Organizing Multilayer Neural Network.}
+\newblock Biological Cybernetics 20, 121-136, 1975.
+
+\bibitem{Fukushima2}
+K.~Fukushima.
+\newblock {\em Neocognitron: A Self-Organizing Neural Network Model for a
+  Mechanism of Pattern Recognition Unaffected by Shift in Position.}
+\newblock Biological Cybernetics 36, 193-202, 1980.
+
+\bibitem{Girolami}
+M.~Girolami.
+\newblock {\em Self-Organising Neural Networks - Independent Component Analysis
+  and Blind Source Separation}.
+\newblock Springer Verlag, 1999.
+
+\bibitem{Cottrell}
+D.~Zipser G.W.~Cottrell, P.~Munro.
+\newblock {\em Learning Internal Representation from Gray-Scale Images: An
+  Example of Extensional Programming.}
+\newblock In: Ninth Conf. of the Cognitive Science Society, Seattle, 462-473,
+  Erlbaum, 1987.
+
+\bibitem{toulouse}
+G.~Toulouse H.~Gutfreund.
+\newblock {\em The Physics of Neural Networks}.
+\newblock Preprint, 1992.
+
+\bibitem{Haykin}
+S.~Haykin.
+\newblock {\em Supervised Learning of Probability Distribution by Neural
+  Networks.}
+\newblock Neural Information Processing Systems, Denver, 1987.
+
+\bibitem{Diamantaras}
+S.Y.~Kung K.I.~Diamantaras.
+\newblock {\em Principal Component Neural Networks: Theory and Applications}.
+\newblock Wiley, 1996.
+
+\bibitem{lstm}
+MultiMedia LLC.
+\newblock Understanding lstm networks, 2015.
+
+\bibitem{oecd}
+OECD.
+\newblock Data-driven innovation forgrowth and well-being, 2014.
+
+\bibitem{Sanger2}
+T.D. Sanger.
+\newblock {\em Optimal Unsupervised Learning in a Single-Layer Linear
+  Feedforward Neural Network.}
+\newblock Neural Networks 2, 459-473, 1989.
+
+\bibitem{Sanger1}
+T.D. Sanger.
+\newblock {\em An Optimality Principle for Unsupervised Learning.}
+\newblock Toureretzky, 1989.
+
+\bibitem{autoriFundamentali}
+Pitts W.S.~McCulloch.
+\newblock {\em W. A Logical Calculus of Ideas Immanent in Nervous Activity.}
+\newblock Bull. of Mathematical Biophysics 5, 115-133, 1943.
+
+\end{thebibliography}

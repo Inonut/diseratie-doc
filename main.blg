@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Arch Linux)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: main.aux
+The style file: plain.bst
+Database file #1: references.bib
+Warning--entry type for "lstm" isn't style-file defined
+--line 111 of file references.bib
+Warning--entry type for "oecd" isn't style-file defined
+--line 118 of file references.bib
+Warning--empty journal in Diederik
+Warning--empty publisher in calculNeuronal
+Warning--empty year in calculNeuronal
+You've used 18 entries,
+            2118 wiz_defined-function locations,
+            593 strings with 6041 characters,
+and the built_in function-call counts, 3845 in all, are:
+= -- 335
+> -- 126
+< -- 0
++ -- 56
+- -- 36
+* -- 147
+:= -- 680
+add.period$ -- 51
+call.type$ -- 18
+change.case$ -- 57
+chr.to.int$ -- 0
+cite$ -- 21
+duplicate$ -- 204
+empty$ -- 392
+format.name$ -- 36
+if$ -- 814
+int.to.chr$ -- 0
+int.to.str$ -- 18
+missing$ -- 31
+newline$ -- 90
+num.names$ -- 36
+pop$ -- 147
+preamble$ -- 1
+purify$ -- 54
+quote$ -- 0
+skip$ -- 111
+stack$ -- 0
+substring$ -- 92
+swap$ -- 17
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 42
+warning$ -- 3
+while$ -- 36
+width$ -- 20
+write$ -- 174
+(There were 5 warnings)

@@ -1,0 +1,80 @@
+\subsection{Learning optimizer}
+
+Optimization refers to the task of minimizing/maximizing an objective function $f(x)$ parameterized by $x$. In machine/deep learning terminology, it’s the task of minimizing the cost/loss function $J(w)$ parameterized by the model’s parameters $w \in R^d$. Optimization algorithms (in case of minimization) have one of the following goals:
+
+\begin{itemize}
+    \item Find the lowest possible value of the objective function within its neighborhood. That’s usually the case if the objective function is not convex as the case in most deep learning problems.
+    \item Find the global minimum of the objective function. This is feasible if the objective function is convex, i.e. any local minimum is a global minimum.
+\end{itemize}
+
+There are three kinds of optimization algorithms:
+
+\begin{itemize}
+    \item Optimization algorithm that is iterative in nature and converges to acceptable solution regardless of the parameters initialization such as gradient descent applied to logistic regression.
+    \item Optimization algorithm that is iterative in nature and applied to a set of problems that have non-convex cost functions such as neural networks. Therefore, parameters’ initialization plays a critical role in speeding up convergence and achieving lower error rates.
+    \item Optimization algorithm that is not iterative and simply solves for one point.
+\end{itemize}
+
+\subsubsection{Adam optimizer}
+
+The method computes individual adaptive learning rates for different parameters from estimates of first and second moments of the gradients; the name Adam is derived from adaptive moment estimation. This is used to perform optimization and is one of the best optimizer at present. The author claims that it inherits from RMSProp and AdaGrad (Well it inherits from them).\\
+
+Features:
+\begin{itemize}
+    \item The step-size is approximately bounded by the step-size hyper-parameter.
+    \item It doesn't require stationary objective. That means the f(x) we talked about might change with time and still the algorithm will converge.
+    \item Parameters update are invariant to re-scaling of gradient. It means that if we have some objective function f(x) and we change it to $k*f(x)$ (where k is some constant). There will be no effect on performance.
+    \item Naturally performs step size annealing. Well remember the classical SGD, we used to decrease step size after some epochs, nothing as such is needed here.
+\end{itemize}
+
+The method is straightforward to implement, is computationally efficient, has little memory requirements, is invariant to diagonal rescaling of the gradients, and is well suited for problems that are large in terms of data and/or parameters \cite{Diederik}. 
+
+\begin{algorithm}
+    \SetKwInOut{Input}{Input}
+    \SetKwInOut{Output}{Output}
+
+    \Input{$\alpha$: Stepsize}
+    \Input{$\beta_1, \beta_2 \in [0, 1)$: Exponential decay rates for the moment estimates}
+    \Input{$f(\theta)$: Stochastic objective function with parameters $\theta$}
+    \Input{$\theta_0$: nitial parameter vector}
+    
+    $m_0 \leftarrow 0$ (Initialize $1^{st}$ moment vector)\;
+    $v_0 \leftarrow 0$ (Initialize $2^{nd}$ moment vector)\;
+    $t \leftarrow 0$ (Initialize timestep)\;
+    
+    \While {$\theta_t$ not converged} {
+        $t \leftarrow t + 1$ \;
+        $g_t \leftarrow \bigtriangledown_0 f_1 (\theta_{t-1})$ (Get gradients w.r.t. stochastic objective at timestept)\;
+        $m_t \leftarrow \beta_1 \cdot m_{t-1} + (1 - \beta_1) \cdot g_t$ (Update biased first moment estimate)\;
+        $v_t \leftarrow \beta_2 \cdot v_{t-1} + (1-\beta_2) \cdot g_t^2$ (Update biased second raw moment estimate)\;
+        $\widehat{m}_t \leftarrow m_t/(1 - \beta_1^t)$ (Compute bias-corrected first moment estimate)\;
+        $\widehat{v}_t \leftarrow v_t/(1 - \beta_2^t)$ (Compute bias-corrected second raw moment estimate)\;
+        $\theta_t \leftarrow \theta_{t-1} - \alpha \cdot \widehat{m}_t / (\sqrt{\widehat{v}_t} + e)$ (Update parameters)\;
+    }
+    
+    \Return $\theta_t$ (Resulting parameters)
+
+    \label{alg:adamOptimizer}
+    \caption{Adam, proposed algorithm for stochastic optimization.}
+\end{algorithm}
+
+Let $f(\theta)$ be  a  noisy  objective  function:  a  stochastic  scalar  function  that  is  differentiable  w.r.t. parameters $\theta$. We  are  interested in minimizing the expected value of this function, $E[f(\theta)]$ w.r.t. its parameters $\theta$. With $f_1(θ),...,f_T(θ)$ we  denote  the  realisations  of  the  stochastic  function  at  subsequent  timesteps 1,...,T. The stochasticity might come from the evaluation at random subsamples (minibatches) of datapoints, or arise from inherent function noise. With $g_t= \bigtriangledown_0 f_1 (\theta_{t-1})$ we denote the gradient, i.e. the vector of partial derivatives of $f_t.w.r.t \theta$ evaluated at timestep $t$. 
+
+The algorithm updates exponential moving averages of the gradient $(m_t)$ and the squared gradient $(v_t)$ where the hyper-parameters $β_1,β_2 \in [0,1)$ control the exponential decay rates of these moving averages. The moving averages themselves are estimates of the $2^{nd}$ raw moment (the uncentered variance) and the $1^{st}$ moment (the mean) of the gradient.   However,  these moving averages are initialized as (vectors of) 0’s, leading to moment estimates that are biased towards zero, especially during the initial timesteps, and especially when the decay rates are small (i.e. the $\beta$s are close to 1).The good news is that this initialization bias can be easily counteracted, resulting in bias-corrected estimate $\widehat{m}_t$ and $\widehat{v}_t$.
+
+Note that the efficiency of \ref{alg:adamOptimizer} can, at the expense of clarity, be improved upon by changing the order of computation, e.g.  by replacing the last three lines in the loop with the following lines \cite{Diederik}: $$\alpha_t = \alpha \cdot \sqrt{1 - \beta_2^t}/(1 - \beta_1^t)$$ and $$\theta_y \leftarrow \theta_{t-1} - \alpha_t \cdot m_t/(\sqrt{v_t} + \widehat{e})$$
+
+
+\subsubsection{AdaGrad optimizer}
+
+AdaGrad or adaptive gradient allows the learning rate to adapt based on parameters. It performs larger updates for infrequent parameters and smaller updates for frequent one. Because of this it is well suited for sparse data (NLP or image recognition). Another advantage is that it basically eliminates the need to tune the learning rate. Each parameter has its own learning rate and due to the peculiarities of the algorithm the learning rate is monotonically decreasing. This causes the biggest problem: at some point of time the learning rate is so small that the system stops learning.
+
+\subsubsection{Gradient descendent optimizer}
+
+Gradient Descent is the most common optimization algorithm in machine learning and deep learning. It is a first-order optimization algorithm. This means it only takes into account the first derivative when performing the updates on the parameters. On each iteration, we update the parameters in the opposite direction of the gradient of the objective function J(w) w.r.t the parameters where the gradient gives the direction of the steepest ascent. The size of the step we take on each iteration to reach the local minimum is determined by the learning rate $\alpha$. Therefore, we follow the direction of the slope downhill until we reach a local minimum.
+
+\subsubsection{RMSprop optimizer}
+
+Gradients of very complex functions like neural networks have a tendency to either vanish or explode as the energy is propagated through the function. And the effect has a cumulative nature; the more complex the function is, the worse the problem becomes.
+
+Rmsprop is a very clever way to deal with the problem. It uses a moving average of squared gradients to normalize the gradient itself. That has an effect of balancing the step size; decrease the step for large gradient to avoid exploding, and increase the step for small gradient to avoid vanishing.

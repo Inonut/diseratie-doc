@@ -1,0 +1,47 @@
+\contentsline {section}{Introduction}{3}
+\contentsline {section}{\numberline {1}Generalities}{5}
+\contentsline {subsection}{\numberline {1.1}Biologic neuron}{5}
+\contentsline {subsection}{\numberline {1.2}Artificial neuron}{7}
+\contentsline {subsection}{\numberline {1.3}Areas of use of neural networks}{10}
+\contentsline {subsubsection}{\numberline {1.3.1}Processing of natural languages}{10}
+\contentsline {subsubsection}{\numberline {1.3.2}Compression of multidimensional data}{10}
+\contentsline {subsubsection}{\numberline {1.3.3}Character Recognition}{11}
+\contentsline {paragraph}{Handwriting recognition.}{11}
+\contentsline {paragraph}{Image processing.}{11}
+\contentsline {section}{\numberline {2}Machine learning}{13}
+\contentsline {subsection}{\numberline {2.1}Supervised learning}{13}
+\contentsline {subsection}{\numberline {2.2}Unsupervised learning}{14}
+\contentsline {subsection}{\numberline {2.3}Learning optimizer}{15}
+\contentsline {subsubsection}{\numberline {2.3.1}Adam optimizer}{16}
+\contentsline {subsubsection}{\numberline {2.3.2}AdaGrad optimizer}{18}
+\contentsline {subsubsection}{\numberline {2.3.3}Gradient descendent optimizer}{18}
+\contentsline {subsubsection}{\numberline {2.3.4}RMSprop optimizer}{19}
+\contentsline {subsection}{\numberline {2.4}Recurrent neural network}{19}
+\contentsline {subsubsection}{\numberline {2.4.1}Bidirectional RNNs}{21}
+\contentsline {subsubsection}{\numberline {2.4.2}Deep (Bidirectional) RNNs}{22}
+\contentsline {subsubsection}{\numberline {2.4.3}LSTM networks}{22}
+\contentsline {subsection}{\numberline {2.5}Conditional random field}{24}
+\contentsline {subsubsection}{\numberline {2.5.1}Keyword extraction}{26}
+\contentsline {subsubsection}{\numberline {2.5.2}Named entity extraction}{26}
+\contentsline {subsubsection}{\numberline {2.5.3}Time expressions extraction}{27}
+\contentsline {subsubsection}{\numberline {2.5.4}Sentiment Analysis}{27}
+\contentsline {section}{\numberline {3}Implementation}{29}
+\contentsline {subsection}{\numberline {3.1}Why python?}{29}
+\contentsline {subsection}{\numberline {3.2}Tensor flow}{31}
+\contentsline {subsubsection}{\numberline {3.2.1}Graph}{32}
+\contentsline {subsubsection}{\numberline {3.2.2}Session}{33}
+\contentsline {subsubsection}{\numberline {3.2.3}Placeholder}{33}
+\contentsline {subsubsection}{\numberline {3.2.4}Variable}{34}
+\contentsline {subsubsection}{\numberline {3.2.5}Scope}{36}
+\contentsline {subsubsection}{\numberline {3.2.6}Loss}{38}
+\contentsline {subsubsection}{\numberline {3.2.7}Logits}{38}
+\contentsline {subsubsection}{\numberline {3.2.8}Feed}{38}
+\contentsline {subsubsection}{\numberline {3.2.9}Tensor}{39}
+\contentsline {subsubsection}{\numberline {3.2.10}Static shape}{40}
+\contentsline {subsubsection}{\numberline {3.2.11}Dynamic shape}{41}
+\contentsline {subsection}{\numberline {3.3}Named entry recognition}{43}
+\contentsline {subsubsection}{\numberline {3.3.1}Glove}{43}
+\contentsline {subsubsection}{\numberline {3.3.2}Prepare data}{44}
+\contentsline {subsubsection}{\numberline {3.3.3}Build graph}{46}
+\contentsline {subsubsection}{\numberline {3.3.4}Tests}{56}
+\contentsline {section}{Conclusion}{60}

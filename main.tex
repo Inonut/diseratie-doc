@@ -1,0 +1,74 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+
+% indent first paragraph form new pages
+\usepackage{indentfirst}
+
+% margins
+\usepackage[a4paper, left=3cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+
+% line space between lines
+\renewcommand{\baselinestretch}{1.5}
+
+% indent first sentence
+\setlength{\parindent}{4em}
+
+% indent between paragraphs
+\setlength{\parskip}{0.7em}
+
+% for figures
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption, threeparttable}
+\captionsetup{labelfont = sc, textfont = it, width=.8\linewidth}
+
+% math helpers
+\usepackage{amsmath}
+
+% build images
+\usepackage{tikz}
+\usetikzlibrary{shapes,snakes, arrows.meta, fit, positioning}
+
+% algorithm
+\usepackage[linesnumbered,ruled]{algorithm2e}
+
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  frame=single,
+  breaklines=true,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+}
+
+\newtheorem{obs}{Obs.}
+
+\begin{document}
+    % \large
+    
+    \input{section/first-page.tex}
+
+    \input{section/title-page.tex}
+    
+    \newpage
+    \tableofcontents
+    
+    \newpage
+    \input{section/introduction-section.tex}
+    
+    \newpage
+    \input{section/generalities-section.tex}
+    
+    \newpage
+    \input{section/machine-learning-section.tex}
+    
+    \newpage
+    \input{section/implementation-section.tex}
+    
+    \newpage
+    \input{section/conclusion-section.tex}
+
+    \newpage
+    \bibliographystyle{plain}
+    \bibliography{references}
+\end{document}
